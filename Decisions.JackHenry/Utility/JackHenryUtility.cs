@@ -1,5 +1,9 @@
 using System;
 using System.Runtime.CompilerServices;
+using Decisions.OAuth;
+using DecisionsFramework.Data.ORMapper;
+using DecisionsFramework.Utilities.Data;
+using Newtonsoft.Json;
 
 namespace Decisions.JackHenry
 {
@@ -32,8 +36,29 @@ namespace Decisions.JackHenry
 
         internal static T SendRequest<T>(string url, string tokenId)
         {
-            return default(T);
-            // TODO: fetch token, then simple call to httpclient
+            if (string.IsNullOrEmpty(tokenId))
+                throw new Exception($"No OAuth token specified");
+
+            ORM<OAuthToken> orm = new ORM<OAuthToken>();
+            OAuthToken token = orm.Fetch(tokenId);
+            if (token == null)
+                throw new Exception($"No OAuth token found with ID {tokenId}");
+
+            HttpClient httpClient = HttpClients.GetHttpClient(HttpClientAuthType.Normal);
+            HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Get, url);
+            req.Headers.Add("Authorization", $"Bearer {token.TokenData}");
+            HttpResponseMessage res = httpClient.Send(req);
+            res.EnsureSuccessStatusCode();
+
+            using (Stream responseStream = res.Content.ReadAsStream())
+            {
+                using (StreamReader streamReader = new StreamReader(responseStream))
+                {
+                    string responseString = streamReader.ReadToEnd();
+                    object result = JsonConvert.DeserializeObject(responseString, typeof(T));
+                    return (T)result;
+                }
+            }
         }
     }
 }
