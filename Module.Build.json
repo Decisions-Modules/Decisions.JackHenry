@@ -14,10 +14,10 @@
     "ObjectsToImport": null,
     "MsSqlScript": null,
     "CustomImages": [
-			"./icons/*.*" todo fix
+			"./CustomModuleImages/*.*"
 		]
   },
   "Version": "9.21.0",
-  "ImagePath": "./image.png",  todo
+  "ImagePath": "./image.svg",
   "Description": "The Jack Henry module comes with steps to interact with bank account information and account transaction data held by Jack Henry."
 }

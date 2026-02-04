@@ -8,7 +8,7 @@ using static Decisions.JackHenry.JackHenryUtility;
 namespace Decisions.JackHenry
 {
     [AutoRegisterMethodsOnClass(true, "Integration", "Jack Henry", "Users")]
-    [ShapeImageAndColorProvider(null, "flow step images|integrations.svg")]
+    [ShapeImageAndColorProvider(null, STEP_ICON_PATH)]
     public static class UsersSteps
     {
         public static UserInfo GetUserInformation(
