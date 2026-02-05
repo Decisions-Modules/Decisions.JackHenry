@@ -1,0 +1,23 @@
+{
+  "Resources": {
+    "NoComponents": true,
+    "CoreServicesDlls": [
+      "./Decisions.JackHenry/obj/Decisions.JackHenry.dll"
+    ],
+    "ReferenceDlls": null,
+    "CliDlls": null,
+    "WebPages": null,
+    "SilverlightDlls": null,
+    "AgentDlls": null,
+    "InstallScript": null,
+    "SqlScripts": null,
+    "ObjectsToImport": null,
+    "MsSqlScript": null,
+    "CustomImages": [
+			"./CustomModuleImages/*.*"
+		]
+  },
+  "Version": "9.21.0",
+  "ImagePath": "./image.svg",
+  "Description": "The Jack Henry module comes with steps to interact with bank account information and account transaction data held by Jack Henry."
+}
