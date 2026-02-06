@@ -54,7 +54,7 @@ namespace Decisions.JackHenry
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("fetchedDate")]
-        public DateTimeOffset FetchedDate { get; set; }
+        public DateTimeOffset? FetchedDate { get; set; }
 
         /// <summary>
         /// The values of status are described in account-status
@@ -69,7 +69,7 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("accountStatus")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public AccountStatus AccountStatus { get; set; }
+        public AccountStatus? AccountStatus { get; set; }
 
         /// <summary>
         /// If this account is closed, this is the date when it will no longer be available
@@ -77,7 +77,7 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("closedAccountAvailableUntil")]
         [JsonConverter(typeof(DateFormatConverter))]
-        public DateTimeOffset ClosedAccountAvailableUntil { get; set; }
+        public DateTimeOffset? ClosedAccountAvailableUntil { get; set; }
 
         /// <summary>
         /// The values of lastLoginFailure are described in login-failure
@@ -112,21 +112,21 @@ namespace Decisions.JackHenry
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("canCreatePayments")]
-        public bool CanCreatePayments { get; set; }
+        public bool? CanCreatePayments { get; set; }
 
         /// <summary>
         /// Can transfer from another account if true
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("canTransferFrom")]
-        public bool CanTransferFrom { get; set; }
+        public bool? CanTransferFrom { get; set; }
 
         /// <summary>
         /// Does this account have rewards associated with it. Required to be true to be able to access the rewards endpoint for this account.
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("hasRewards")]
-        public bool HasRewards { get; set; }
+        public bool? HasRewards { get; set; }
 
         /// <summary>
         /// Login Id
@@ -144,28 +144,28 @@ namespace Decisions.JackHenry
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("hidden")]
-        public bool Hidden { get; set; }
+        public bool? Hidden { get; set; }
 
         /// <summary>
         /// True if the account is not hidden. Deprecated in favor of `hidden`
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("active")]
-        public bool Active { get; set; }
+        public bool? Active { get; set; }
 
         /// <summary>
         /// The preference of whether or not an account's totals should contribute to the aggregation totals
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("contributesToAggregateTotals")]
-        public bool ContributesToAggregateTotals { get; set; }
+        public bool? ContributesToAggregateTotals { get; set; }
 
         /// <summary>
         /// Alert for low funds if true
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("lowFundsAlertEnabled")]
-        public bool LowFundsAlertEnabled { get; set; }
+        public bool? LowFundsAlertEnabled { get; set; }
 
         /// <summary>
         /// Threshold of the low funds alert
@@ -179,14 +179,14 @@ namespace Decisions.JackHenry
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("sortIndex")]
-        public int SortIndex { get; set; }
+        public int? SortIndex { get; set; }
 
         /// <summary>
         /// Favorited if true. Deprecated in favor of `sortIndex`
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("favorited")]
-        public bool Favorited { get; set; }
+        public bool? Favorited { get; set; }
 
         /// <summary>
         /// The balance the institution discloses to Banno. Typically for cash accounts, this is the amount of cash in that account; for credit accounts, this is the cash sum of the transaction amounts that have been charged to the credit account
@@ -313,7 +313,7 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("insuredStatus")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public AccountInsuredStatus InsuredStatus { get; set; }
+        public AccountInsuredStatus? InsuredStatus { get; set; }
     }
 
     [Writable, DataContract]
@@ -340,7 +340,7 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("linkType")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public LinkType LinkType { get; set; }
+        public LinkType? LinkType { get; set; }
 
         /// <summary>
         /// Title of the link
@@ -404,7 +404,7 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("type")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public FormattedMetaDataValueType Type { get; set; }
+        public FormattedMetaDataValueType? Type { get; set; }
 
         /// <summary>
         /// The label to display associated with the value
@@ -425,7 +425,7 @@ namespace Decisions.JackHenry
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("hidden")]
-        public bool Hidden { get; set; }
+        public bool? Hidden { get; set; }
 
         /// <summary>
         /// The label provided by the institution
@@ -438,10 +438,6 @@ namespace Decisions.JackHenry
     [Writable, DataContract]
     public class TextValue : FormattedMetaDataValue
     {
-        [WritableValue, DataMember]
-        [JsonProperty("type")]
-        public TextValueType Type { get; set; }
-
         /// <summary>
         /// The text value to display
         /// </summary>
@@ -612,14 +608,14 @@ namespace Decisions.JackHenry
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("restricted")]
-        public bool Restricted { get; set; }
+        public bool? Restricted { get; set; }
 
         /// <summary>
         /// Optional number of regulation D restricted withdrawals this month
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("count")]
-        public int Count { get; set; }
+        public int? Count { get; set; }
     }
 
     [Writable, DataContract]
@@ -707,14 +703,14 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("stopPaymentsAccess")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public EntitlementsStopPaymentsAccess StopPaymentsAccess { get; set; }
+        public EntitlementsStopPaymentsAccess? StopPaymentsAccess { get; set; }
 
         /// <summary>
         /// Allowable account for use in the Zelle feature
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("zelle")]
-        public bool Zelle { get; set; }
+        public bool? Zelle { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("links")]
@@ -779,12 +775,6 @@ namespace Decisions.JackHenry
 
         [EnumMember(Value = @"Count")]
         Count = 4,
-    }
-
-    public enum TextValueType
-    {
-        [EnumMember(Value = @"Text")]
-        Text = 0,
     }
 
     public enum EntitlementsStopPaymentsAccess

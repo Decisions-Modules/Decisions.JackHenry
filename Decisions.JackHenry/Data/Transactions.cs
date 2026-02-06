@@ -18,11 +18,11 @@ namespace Decisions.JackHenry
 
         [WritableValue, DataMember]
         [JsonProperty("offset")]
-        public int Offset { get; set; }
+        public int? Offset { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("limit")]
-        public int Limit { get; set; }
+        public int? Limit { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("account")]
@@ -173,7 +173,7 @@ namespace Decisions.JackHenry
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("hasProviderImages")]
-        public bool HasProviderImages { get; set; }
+        public bool? HasProviderImages { get; set; }
 
         /// <summary>
         /// The running account balance at the point in time of this transaction.
@@ -187,7 +187,7 @@ namespace Decisions.JackHenry
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("sequence")]
-        public int Sequence { get; set; }
+        public int? Sequence { get; set; }
 
         /// <summary>
         /// A timestamp indicating when this transaction was last updated.
@@ -201,7 +201,7 @@ namespace Decisions.JackHenry
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("lastUpdated")]
-        public System.DateTimeOffset LastUpdated { get; set; }
+        public DateTimeOffset? LastUpdated { get; set; }
 
         /// <summary>
         /// All notes associated with the transaction.
@@ -230,7 +230,7 @@ namespace Decisions.JackHenry
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("EDIAvailable")]
-        public bool EDIAvailable { get; set; }
+        public bool? EDIAvailable { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("sourceData")]
@@ -253,7 +253,7 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("accountType")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public AccountType AccountType { get; set; }
+        public AccountType? AccountType { get; set; }
 
         /// <summary>
         /// The values of accountSubType are described in account-types
@@ -315,17 +315,17 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("transactionType")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public MoovSourceDataTransactionType TransactionType { get; set; }
+        public MoovSourceDataTransactionType? TransactionType { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("sourceType")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public MoovSourceDataSourceType SourceType { get; set; }
+        public MoovSourceDataSourceType? SourceType { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("status")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public MoovSourceDataStatus Status { get; set; }
+        public MoovSourceDataStatus? Status { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("createdOn")]
@@ -455,7 +455,7 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("expenseCategory")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public EnrichmentsExpenseCategory ExpenseCategory { get; set; }
+        public EnrichmentsExpenseCategory? ExpenseCategory { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("categoryIcon")]
