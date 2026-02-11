@@ -10,8 +10,6 @@ namespace Decisions.JackHenry
 {
     internal static class JackHenryUtility
     {
-        internal const string STEP_ICON_PATH = Constants.CUSTOM_MODULE_IMAGES_LOCATION + "/Decisions.JackHenry/|jh.png";
-
         internal static string GetUrl(string baseUrl, string userId, string endpointSegments)
         {
             if (string.IsNullOrEmpty(endpointSegments))

@@ -454,8 +454,7 @@ namespace Decisions.JackHenry
         /// </summary>
         [WritableValue, DataMember]
         [JsonProperty("expenseCategory")]
-        [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public EnrichmentsExpenseCategory? ExpenseCategory { get; set; }
+        public string ExpenseCategory { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("categoryIcon")]
@@ -682,56 +681,5 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("long")]
         public string Long { get; set; }
-    }
-
-    public enum EnrichmentsExpenseCategory
-    {
-        [EnumMember(Value = @"clothing")]
-        Clothing = 0,
-
-        [EnumMember(Value = @"diningout")]
-        Diningout = 1,
-
-        [EnumMember(Value = @"education")]
-        Education = 2,
-
-        [EnumMember(Value = @"entertainment")]
-        Entertainment = 3,
-
-        [EnumMember(Value = @"fees")]
-        Fees = 4,
-
-        [EnumMember(Value = @"groceries")]
-        Groceries = 5,
-
-        [EnumMember(Value = @"health")]
-        Health = 6,
-
-        [EnumMember(Value = @"home")]
-        Home = 7,
-
-        [EnumMember(Value = @"income")]
-        Income = 8,
-
-        [EnumMember(Value = @"payment")]
-        Payment = 9,
-
-        [EnumMember(Value = @"personal")]
-        Personal = 10,
-
-        [EnumMember(Value = @"savings")]
-        Savings = 11,
-
-        [EnumMember(Value = @"transfer")]
-        Transfer = 12,
-
-        [EnumMember(Value = @"transportation")]
-        Transportation = 13,
-
-        [EnumMember(Value = @"travel")]
-        Travel = 14,
-
-        [EnumMember(Value = @"utilities")]
-        Utilities = 15,
     }
 }

@@ -8,7 +8,6 @@ using static Decisions.JackHenry.JackHenryUtility;
 namespace Decisions.JackHenry
 {
     [AutoRegisterMethodsOnClass(true, "Integration", "Jack Henry", "Transactions")]
-    [ShapeImageAndColorProvider(null, STEP_ICON_PATH)]
     public static class TransactionsSteps
     {
         public static PaginatedTransactions GetAllTransactions(
