@@ -100,12 +100,12 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("userType")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public UserInfoUserType UserType { get; set; }
+        public UserInfoUserType? UserType { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("provider")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public UserInfoProvider Provider { get; set; }
+        public UserInfoProvider? Provider { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("firstName")]
@@ -134,7 +134,7 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("adminLevel")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public AdminLevel AdminLevel { get; set; }
+        public AdminLevel? AdminLevel { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("address")]
@@ -146,7 +146,7 @@ namespace Decisions.JackHenry
 
         [WritableValue, DataMember]
         [JsonProperty("userVerified")]
-        public bool UserVerified { get; set; }
+        public bool? UserVerified { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("lastEulaAcceptance")]
@@ -154,7 +154,7 @@ namespace Decisions.JackHenry
 
         [WritableValue, DataMember]
         [JsonProperty("userAddedDateTime")]
-        public DateTimeOffset UserAddedDateTime { get; set; }
+        public DateTimeOffset? UserAddedDateTime { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("institutionId")]
@@ -173,7 +173,7 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("enrollmentType")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public UserInfoEnrollmentType EnrollmentType { get; set; }
+        public UserInfoEnrollmentType? EnrollmentType { get; set; }
 
         /// <summary>
         /// Identifier for the user in UIS.
@@ -281,12 +281,12 @@ namespace Decisions.JackHenry
         [WritableValue, DataMember]
         [JsonProperty("status")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public Status Status { get; set; }
+        public Status? Status { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("adminLevel")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public AdminLevel AdminLevel { get; set; }
+        public AdminLevel? AdminLevel { get; set; }
 
         [WritableValue, DataMember]
         [JsonProperty("alias")]

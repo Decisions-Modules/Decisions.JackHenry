@@ -8,7 +8,6 @@ using static Decisions.JackHenry.JackHenryUtility;
 namespace Decisions.JackHenry
 {
     [AutoRegisterMethodsOnClass(true, "Integration", "Jack Henry", "Users")]
-    [ShapeImageAndColorProvider(null, STEP_ICON_PATH)]
     public static class UsersSteps
     {
         public static UserInfo GetUserInformation(
