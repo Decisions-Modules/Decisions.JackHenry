@@ -317,61 +317,6 @@ namespace Decisions.JackHenry
     }
 
     [Writable, DataContract]
-    public class AccountsEntitlements
-    {
-        [WritableValue, DataMember]
-        [JsonProperty("entitlements")]
-        public Entitlements[] Entitlements { get; set; }
-    }
-
-    [Writable, DataContract]
-    public class Link
-    {
-        /// <summary>
-        /// The link ID
-        /// </summary>
-        [WritableValue, DataMember]
-        [JsonProperty("id")]
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Account level link type
-        /// </summary>
-        [WritableValue, DataMember]
-        [JsonProperty("linkType")]
-        [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public LinkType? LinkType { get; set; }
-
-        /// <summary>
-        /// Title of the link
-        /// </summary>
-        [WritableValue, DataMember]
-        [JsonProperty("title")]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// Longer description of the link
-        /// </summary>
-        [WritableValue, DataMember]
-        [JsonProperty("description")]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// Name of the SSO provider
-        /// </summary>
-        [WritableValue, DataMember]
-        [JsonProperty("name")]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// FDIC (Federal Deposit Insurance Corporation) notice text to display to the user.
-        /// </summary>
-        [WritableValue, DataMember]
-        [JsonProperty("fdicNotice")]
-        public string FdicNotice { get; set; }
-    }
-
-    [Writable, DataContract]
     public class FormattedMetaData
     {
         [WritableValue, DataMember]
@@ -690,75 +635,6 @@ namespace Decisions.JackHenry
         NotApplicable = 2,
     }
 
-    [Writable, DataContract]
-    public class Entitlements
-    {
-        [WritableValue, DataMember]
-        [JsonProperty("accountId")]
-        public string AccountId { get; set; }
-
-        /// <summary>
-        /// Access control value for stop payments that distinguishes between read only, write only, or read/write
-        /// </summary>
-        [WritableValue, DataMember]
-        [JsonProperty("stopPaymentsAccess")]
-        [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public EntitlementsStopPaymentsAccess? StopPaymentsAccess { get; set; }
-
-        /// <summary>
-        /// Allowable account for use in the Zelle feature
-        /// </summary>
-        [WritableValue, DataMember]
-        [JsonProperty("zelle")]
-        public bool? Zelle { get; set; }
-
-        [WritableValue, DataMember]
-        [JsonProperty("links")]
-        public Link[] Links { get; set; }
-    }
-
-    public enum LinkType
-    {
-        [EnumMember(Value = @"CardLocationManagement")]
-        CardLocationManagement = 0,
-
-        [EnumMember(Value = @"CheckReorderingByAccount")]
-        CheckReorderingByAccount = 1,
-
-        [EnumMember(Value = @"CreditCardControls")]
-        CreditCardControls = 2,
-
-        [EnumMember(Value = @"DocumentsByAccount")]
-        DocumentsByAccount = 3,
-
-        [EnumMember(Value = @"EStatusConnect")]
-        EStatusConnect = 4,
-
-        [EnumMember(Value = @"FSCCPayment")]
-        FSCCPayment = 5,
-
-        [EnumMember(Value = @"LoanPayment")]
-        LoanPayment = 6,
-
-        [EnumMember(Value = @"MortgageServices")]
-        MortgageServices = 7,
-
-        [EnumMember(Value = @"PowerCDRenew")]
-        PowerCDRenew = 8,
-
-        [EnumMember(Value = @"PowerLoan")]
-        PowerLoan = 9,
-
-        [EnumMember(Value = @"PowerOverdraft")]
-        PowerOverdraft = 10,
-
-        [EnumMember(Value = @"PowerWithdrawCheck")]
-        PowerWithdrawCheck = 11,
-
-        [EnumMember(Value = @"Rewards")]
-        Rewards = 12,
-    }
-
     public enum FormattedMetaDataValueType
     {
         [EnumMember(Value = @"Text")]
@@ -775,21 +651,6 @@ namespace Decisions.JackHenry
 
         [EnumMember(Value = @"Count")]
         Count = 4,
-    }
-
-    public enum EntitlementsStopPaymentsAccess
-    {
-        [EnumMember(Value = @"Read")]
-        Read = 0,
-
-        [EnumMember(Value = @"Write")]
-        Write = 1,
-
-        [EnumMember(Value = @"Both")]
-        Both = 2,
-
-        [EnumMember(Value = @"None")]
-        None = 3,
     }
 
     internal class DateFormatConverter : Newtonsoft.Json.Converters.IsoDateTimeConverter
