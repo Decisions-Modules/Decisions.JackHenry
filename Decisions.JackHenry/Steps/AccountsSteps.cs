@@ -31,15 +31,6 @@ namespace Decisions.JackHenry
             return SendRequest<AccountNumber>(url, tokenId);
         }
 
-        public static Entitlements GetEntitlements(
-            [PropertyClassification("Financial Institution URL", 0)] string baseUrl,
-            [PropertyClassification("OAuth Token", 10), TokenPicker] string tokenId,
-            [PropertyClassification("User ID", 20)] string userId)
-        {
-            string url = GetUrl(baseUrl, userId, $"accounts/entitlements");
-            return SendRequest<Entitlements>(url, tokenId);
-        }
-
         public static Account GetAccount(
             [PropertyClassification("Financial Institution URL", 0)] string baseUrl,
             [PropertyClassification("OAuth Token", 10), TokenPicker] string tokenId,
