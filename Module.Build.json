@@ -1,4 +1,4 @@
-{
+﻿{
   "Resources": {
     "NoComponents": true,
     "CoreServicesDlls": [
@@ -15,7 +15,7 @@
     "MsSqlScript": null,
     "CustomImages": null
   },
-  "Version": "9.21.0",
+  "Version": "10.0.0",
   "ImagePath": "./image.png",
   "Description": "The Jack Henry module comes with steps to interact with bank account information and account transaction data held by Jack Henry."
 }
